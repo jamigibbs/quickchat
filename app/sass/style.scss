@@ -1,3 +1,92 @@
+@import "variables";
+
 body {
-  background-color: white;
+  font-family: $font_raleway;
+}
+
+.top-bar {
+  background-color: #F6F7FB;
+  i {
+    font-size: 38px;
+  }
+  .menu-text, .menu {
+    background-color: #F6F7FB;
+  }
+}
+
+#chatrooms-list {
+  border-right: 1px solid #efefef;
+  height: 100vh;
+  @include bp-medium {
+    height: 100%;
+  }
+  @include bp-small {
+    height: 100%;
+  }
+  
+  h2 {
+    font-size: 26px;
+    margin: 1em 0 0.5em 0;
+    font-weight: 300;
+  }
+  a.button {
+    font-weight: 500;
+  }
+
+  hr {
+    border-color: #efefef;
+  }
+
+  ul {
+    margin-top: 1em;
+    list-style: none;
+    margin-left: 0;
+    li {
+      margin: 0.5em 0;
+    }
+  }
+
+}
+
+#chatroom-wrap {
+  height: 100vh;
+  @include bp-medium {
+    height: 100%;
+  }
+  @include bp-small {
+    height: 100%;
+  }
+  table tbody {
+    border: none;
+    td {
+      padding: 1.5rem .625rem 1.625rem;
+      &.user {
+        font-size: 14px;
+        font-weight: 600;
+        color: #444444;
+      }
+      &.time {
+        font-style: italic;
+        color: #666666;
+      }
+    }
+    tr {
+      &:nth-child(even) {
+        background-color: #F6F7FB;
+      }
+    }
+  }
+
+  .input-group {
+    .input-group-field {
+      height: 3.5rem;
+    }
+    [type=text] {
+      border: 1px solid #e8e8e8;
+      box-shadow: none;
+    }
+    .input-group-button {
+      padding: .85em 2em;
+    }
+  }
 }

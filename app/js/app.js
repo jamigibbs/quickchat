@@ -20,11 +20,6 @@ angular.module('quickchatApp', ['ui.router'])
             url: '/',
             controller: 'homeCtrl',
             templateUrl: '/templates/home.html'
-        })
-        .state('example', {
-            url: '/example',
-            controller: 'exampleCtrl',
-            templateUrl: '/templates/example.html'
         });
 
   }]);
