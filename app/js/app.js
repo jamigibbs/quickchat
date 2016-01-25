@@ -2,7 +2,7 @@
 require('angular');
 require('angular-ui-router');
 
-angular.module('baseApp', ['ui.router'])
+angular.module('quickchatApp', ['ui.router'])
 
   .config(['$locationProvider', '$stateProvider', function($locationProvider, $stateProvider) {
 

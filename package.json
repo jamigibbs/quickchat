@@ -1,10 +1,10 @@
 {
-  "name": "base-frontend-project",
+  "name": "quickchat",
   "version": "0.0.1",
-  "description": "Starter project for frontend applications using Angular and Sass.",
+  "description": "A real-time chat application with Firebase and AngularJS",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jamigibbs/base-frontend-project"
+    "url": "https://github.com/jamigibbs/quickchat"
   },
   "main": "server.js",
   "scripts": {

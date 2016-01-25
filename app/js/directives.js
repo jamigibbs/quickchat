@@ -1,4 +1,4 @@
-angular.module('baseApp')
+angular.module('quickchatApp')
 
   .directive('baseDirective', function() {
     return {

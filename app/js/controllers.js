@@ -1,4 +1,4 @@
-angular.module('baseApp')
+angular.module('quickchatApp')
 
   .controller('homeCtrl', ['$scope', function($scope){
 
