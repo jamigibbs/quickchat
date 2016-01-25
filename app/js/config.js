@@ -1,6 +1,4 @@
-angular.module('quickchatApp', [
-  'ui.router'
-])
+angular.module('quickchatApp', ['ui.router', 'firebase'])
 
   .config(['$locationProvider', '$stateProvider', function($locationProvider, $stateProvider) {
 

@@ -1,15 +1,19 @@
 angular.module('quickchatApp')
 
-  .value('exampleNum', 12)
+  .factory('roomsService', ['$firebaseArray', function ($firebaseArray) {
 
-  .factory('baseFactory', ['exampleNum', function (exampleNum) {
+    var firebaseRef = new Firebase('https://quickchat-angularjs.firebaseio.com');
 
-    var city = 'Chicago';
+    // Use the $firebaseArray service to ensure the data is returned as an array
+    // .child() gets a reference at the specified relative path.
+    // See: firebase.com/docs/web/api/firebase/child.html
+
+    var rooms = $firebaseArray(firebaseRef.child('rooms'));
 
     return {
-      location: function(){
-        return city;
-      }
+
+      all: rooms
+
     };
 
   }]);
