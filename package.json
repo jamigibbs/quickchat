@@ -19,6 +19,7 @@
   "devDependencies": {
     "angular": "^1.4.9",
     "angular-ui-router": "^1.0.0-alpha0",
+    "css-modal": "^1.4.1",
     "grunt": "^0.4.5",
     "grunt-browserify": "^4.0.1",
     "grunt-cli": "^0.1.13",
