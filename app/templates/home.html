@@ -35,7 +35,10 @@
       <hr>
 
       <ul ng-repeat="room in rooms">
-        <li>{{ room.name }}</li>
+        <li>
+          <a ng-click="joinRoom()" ng-class="">{{ room.name }}</a>
+          <span ng-if="activeRoom === room.name" class="info badge"><i class="fa fa-check"></i></span>
+        </li>
       </ul>
 
   </div>
@@ -44,32 +47,20 @@
 <div class="large-9 columns">
   <div id="chatroom-wrap">
 
+    <h3 ng-if="activeRoom">{{ activeRoom }}</h3>
+    <h3 ng-if="!activeRoom">Select a Room</h3>
+
     <table>
       <tbody>
-        <tr>
-          <td class="user">John Wayne</td>
-          <td class="message">This is longer content Donec id elit non mi porta gravida at eget metus.</td>
-          <td class="time">1:45 pm</td>
-        </tr>
-        <tr>
-          <td class="user">John Wayne</td>
-          <td class="message">This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
-          <td class="time">1:45 pm</td>
-        </tr>
-        <tr>
-          <td class="user">John Wayne</td>
-          <td class="message">This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
-          <td class="time">1:45 pm</td>
-        </tr>
-        <tr>
-          <td class="user">John Wayne</td>
-          <td class="message">This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
-          <td class="time">1:45 pm</td>
+        <tr ng-repeat="message in messages">
+          <td class="user">{{message.user}}</td>
+          <td class="message">{{message.message}}</td>
+          <td class="time">{{ message.created | date: 'H:mm a' }}</td>
         </tr>
       </tbody>
     </table>
 
-    <div class="input-group">
+    <div class="input-group" ng-if="activeRoom">
       <input class="input-group-field" type="text" placeholder="Write your message...">
       <a class="input-group-button secondary button">Submit</a>
     </div>
