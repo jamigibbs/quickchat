@@ -1,6 +1,6 @@
 angular.module('quickchatApp')
 
-  .factory('roomsService', ['$firebaseArray', '$firebaseObject', function ($firebaseArray, $firebaseObject) {
+  .factory('roomsService', ['$firebaseArray', function ($firebaseArray) {
 
     var firebaseRef = new Firebase('https://quickchat-angularjs.firebaseio.com');
 
