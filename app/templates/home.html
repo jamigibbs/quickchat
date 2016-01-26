@@ -11,11 +11,18 @@
               <div class="modal-content">
 
                 <h4>Enter a room name</h4>
-                <input type="text" placeholder="Type here" >
+                <input type="text" placeholder="Type here" ng-model="room">
 
                 <div class="button-group">
-                  <a class="button">Create Room</a>
-                  <a class="secondary button">Cancel</a>
+
+                  <a ng-if="room" href="/" class="button" ng-click="addRoom()" data-close="Close"
+                      data-dismiss="modal">Create Room</a>
+
+                  <a ng-if="!room" class="disabled button" href="#">Create Room</a>
+
+                  <a href="/" data-close="Close"
+                      data-dismiss="modal" class="secondary button">Cancel</a>
+
                 </div>
 
               </div>
@@ -28,7 +35,7 @@
       <hr>
 
       <ul ng-repeat="room in rooms">
-        <li>{{ room }}</li>
+        <li>{{ room.name }}</li>
       </ul>
 
   </div>
