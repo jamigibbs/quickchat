@@ -1,0 +1,8 @@
+<h2>Enter Username</h2>
+
+<input type="text" ng-model="username" placeholder="Type here">
+
+<div class="ngdialog-buttons">
+  <button type="button" class="disabled button" ng-if="!username" href="#">Submit Username</button>
+  <button type="button" class="button" ng-if="username" ng-click=confirm(username)>Submit Username</button>
+</div>

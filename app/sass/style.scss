@@ -1,5 +1,7 @@
 @import "variables";
 @import "node_modules/css-modal/modal";
+@import "node_modules/ng-dialog/css/ngDialog";
+@import "node_modules/ng-dialog/css/ngDialog-theme-default";
 
 body {
   font-family: $font_raleway;
@@ -103,6 +105,36 @@ body {
       padding: .85em 2em;
     }
   }
+}
+
+.ngdialog.ngdialog-theme-default .ngdialog-content {
+    background: #ffffff;
+    border-radius: 0;
+    color: #444;
+    margin: 0 auto;
+    max-width: 100%;
+    padding: 1em;
+    position: relative;
+    width: 450px;
+    h2 {
+      font-size: 22px;
+      font-weight: 300;
+    }
+    input {
+      box-shadow: none;
+    }
+    [type=text] {
+      height: 2.4375rem;
+      padding: .5rem;
+      border: 1px solid #cacaca;
+      margin: 0 0 1rem;
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 300;
+      color: #0a0a0a;
+      background-color: #fefefe;
+      border-radius: 0;
+    }
 }
 
 .modal--fade .modal-content, .modal--show .modal-content {

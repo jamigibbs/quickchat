@@ -56,9 +56,17 @@ A list of the Grunt plugins in this application:
 #### Angular UI Router
 [Angular UI Router](https://www.npmjs.com/package/angular-ui-router) a routing framework for AngularJS, which allows you to organize the parts of your interface into a state machine.
 
+#### Angular Cookies
+
+[Angular Cookies](https://www.npmjs.com/package/angular-cookies) provides a convenient wrapper for reading and writing browser cookies.
+
 #### CSS Modal
 
 [CSS Modal](https://github.com/drublic/css-modal) offers modals built out of pure CSS.
+
+#### ngDialog
+
+[ngDialog](https://github.com/likeastore/ngDialog) modals and popups provider for Angular.js applications.
 
 #### Sass
 
