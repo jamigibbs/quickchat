@@ -35,7 +35,7 @@ angular.module('quickchatApp', [
     if( !usernameCookie || usernameCookie === '' ){
 
       // Create our modal dialog box
-  		ngDialog.openConfirm({
+      ngDialog.openConfirm({
         template: '/templates/username-modal.html',
         showClose: false,
         closeByEscape: false,
@@ -43,7 +43,7 @@ angular.module('quickchatApp', [
 
       // Return the username promise
   		}).then(
-        
+
   			function(username) {
           // Create a cookie for the username entered
           $cookies.put('quickchatCurrentUser', username);
