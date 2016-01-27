@@ -26,5 +26,4 @@ angular.module('quickchatApp')
       return new Date(date * 1000);
     };
 
-
   }]);
