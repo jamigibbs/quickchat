@@ -42,16 +42,12 @@ angular.module('quickchatApp', [
         closeByDocument: false
 
       // Return the username promise
-  		}).then(
-
-  			function(username) {
-          // Create a cookie for the username entered
-          $cookies.put('quickchatCurrentUser', username);
-          // Close the dialog box
-          ngDialog.close();
-  			}
-
-  		);
+      }).then( function(username) {
+        // Create a cookie for the username entered
+        $cookies.put('quickchatCurrentUser', username);
+        // Close the dialog box
+        ngDialog.close();
+      });
 
     }
 
