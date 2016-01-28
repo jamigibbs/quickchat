@@ -13,6 +13,7 @@ angular.module('quickchatApp')
 
       allRooms: roomsRef,
 
+      // Create rooms in Firebase
       create: function(){
         roomsRef.$add({
           name:     this.room,
@@ -36,6 +37,8 @@ angular.module('quickchatApp')
     var messagesRef = $firebaseArray(firebaseRef.child('messages'));
 
     return {
+
+        // Add the messages to Firebase
         add: function(user, message, roomId, roomName){
           messagesRef.$add({
             user: user,

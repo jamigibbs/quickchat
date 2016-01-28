@@ -28,9 +28,9 @@ angular.module('quickchatApp')
       return new Date(date * 1000);
     };
 
+    // Get the new message and add it to the database
     $scope.addMessage = function(message){
       MessagesService.add($scope.activeUser, message, $scope.activeRoomId, $scope.activeRoom);
-      $scope.activeMessage = null;
     };
 
   }]);
