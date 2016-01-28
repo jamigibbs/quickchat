@@ -1,12 +1,8 @@
 angular.module('quickchatApp')
 
-  .factory('roomsService', ['$firebaseArray', function ($firebaseArray) {
+  .factory('RoomsService', ['$firebaseArray', 'FIREBASE_URL',  function ($firebaseArray, FIREBASE_URL) {
 
-    var firebaseRef = new Firebase('https://quickchat-angularjs.firebaseio.com');
-
-    // Use the $firebaseArray service to ensure the data is returned as an array
-    // .child() gets a reference at the specified relative path.
-    // See: firebase.com/docs/web/api/firebase/child.html
+    var firebaseRef = new Firebase(FIREBASE_URL);
     var roomsRef = $firebaseArray(firebaseRef.child('rooms'));
 
     // Get the messsages path
@@ -17,20 +13,41 @@ angular.module('quickchatApp')
 
       allRooms: roomsRef,
 
+      // Create rooms in Firebase
       create: function(){
         roomsRef.$add({
-          name: this.room,
-          created_at: Date.now()
+          name:     this.room,
+          created:  Date.now()
         });
 
-        // Reset the variable for the next room submission
-        this.room = null;
       },
 
+      // Query the messages by active Room Id
       messages: function(roomId){
         return $firebaseArray(messagesRef.orderByChild('roomId').equalTo(roomId));
       }
 
+    };
+
+  }])
+
+  .factory('MessagesService', ['$firebaseArray', 'FIREBASE_URL', function($firebaseArray, FIREBASE_URL){
+
+    var firebaseRef = new Firebase(FIREBASE_URL);
+    var messagesRef = $firebaseArray(firebaseRef.child('messages'));
+
+    return {
+
+        // Add the messages to Firebase
+        add: function(user, message, roomId, roomName){
+          messagesRef.$add({
+            user: user,
+            message:  message,
+            roomId:   roomId,
+            created:  Date.now()
+          });
+
+        }
     };
 
   }]);

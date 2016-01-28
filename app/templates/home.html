@@ -47,12 +47,12 @@
 <div class="large-9 columns">
   <div id="chatroom-wrap">
 
-    <h3 ng-if="activeRoom">{{ activeRoom }}</h3>
-    <h3 ng-if="!activeRoom">Select a Room</h3>
+    <h3 ng-if="activeRoom">Room: {{ activeRoom }}</h3>
+    <h3 ng-if="!activeRoom">Hello {{ activeUser }}! Select a Room</h3>
 
     <table>
       <tbody>
-        <tr ng-repeat="message in messages">
+        <tr ng-repeat="message in messages | orderBy:'-created' : true">
           <td class="user">{{message.user}}</td>
           <td class="message">{{message.message}}</td>
           <td class="time">{{ message.created | date: 'H:mm a' }}</td>
@@ -61,8 +61,10 @@
     </table>
 
     <div class="input-group" ng-if="activeRoom">
-      <input class="input-group-field" type="text" placeholder="Write your message...">
-      <a class="input-group-button secondary button">Submit</a>
+
+      <input class="input-group-field" type="text" ng-model="activeMessage" placeholder="Write your message...">
+      <a class="input-group-button secondary button" ng-click="addMessage(activeMessage); activeMessage = null">Submit</a>
+
     </div>
 
   </div>
