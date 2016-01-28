@@ -5,6 +5,8 @@ angular.module('quickchatApp', [
   'ngDialog'
 ])
 
+  .constant('FIREBASE_URL', 'https://quickchat-angularjs.firebaseio.com')
+
   .config(['$locationProvider', '$stateProvider', function($locationProvider, $stateProvider) {
 
     // Configure the app's path
