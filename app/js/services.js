@@ -42,8 +42,6 @@ angular.module('quickchatApp')
                   id:       authData.twitter.id
                 });
 
-                redirect = true;
-
               // If a username matches, redirect to chatrooms
               } else {
                 console.log('username exists');

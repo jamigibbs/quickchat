@@ -36,8 +36,8 @@ angular.module('quickchatApp')
     // Set our username cookie variable
     var usernameCookie = $cookies.get('quickchatCurrentUser');
 
-    // Initiate Twitter oAuth when login is clicked
-    $scope.login = function(){
+    // Initiate Twitter oAuth when login button is clicked
+    $scope.twitterLogin = function(){
       AuthService.twitterLogin();
     };
 
