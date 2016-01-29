@@ -64,10 +64,6 @@ A list of the Grunt plugins in this application:
 
 [CSS Modal](https://github.com/drublic/css-modal) offers modals built out of pure CSS.
 
-#### ngDialog
-
-[ngDialog](https://github.com/likeastore/ngDialog) modals and popups provider for Angular.js applications.
-
 #### Sass
 
 [Grunt Sass](https://github.com/sindresorhus/grunt-sass) a Sass compiler.

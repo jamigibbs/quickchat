@@ -17,6 +17,15 @@ body {
   }
 }
 
+#login-group {
+  margin-top: 3em;
+  text-align: center;
+  padding: 2em;
+  h5, p {
+    margin-bottom: 1em;
+  }
+}
+
 #chatrooms-list {
   border-right: 1px solid #efefef;
   height: 100vh;
