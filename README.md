@@ -1,10 +1,10 @@
 ## Quickchat
 
-A real-time chat application with Firebase and AngularJS
+A real-time chat application with Firebase, AngularJS, and Twitter OAuth -- [https://quickchat-ng.herokuapp.com/chat](https://quickchat-ng.herokuapp.com/chat)
 
-## Configuration
+## Cloning is welcome!
 
-Start by cloning the repository:
+To use this project as your own, start by cloning the repository:
 
 ```
 $ git clone https://github.com/jamigibbs/quickchat.git <your-frontend-project-name>
@@ -18,13 +18,23 @@ $ npm install
 
 ### Run the Application
 
-Run the application using the Grunt file's `default` task:
+Run the application locally using the Grunt file's `default` task:
 
 ```
 $ grunt
 ```
 
 The default task runs a simple server on port 3000. To view it in a any browser, go to [http://localhost:3000](http://localhost:3000).
+
+### TODO
+
+- As a developer, I want to create admin users
+- As an admin, I want to create private rooms for authorized participants
+- As a user, I want to see if another chat room participant is online
+- As a user, I want to see when another user is typing a message in my current chat room
+- As a user, I wan to submit messages on enter/return
+- As a developer, I want to move modals into a directive
+- As a developer, I want to replace 'css-modal' with 'ngDialog'
 
 ## Grunt plugins
 
