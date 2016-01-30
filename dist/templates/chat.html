@@ -1,0 +1,71 @@
+<div class="large-3 columns">
+  <div id="chatrooms-list">
+
+      <h2>Chat Rooms</h2>
+      <a href="#new-room-modal" class="small secondary button">New Room</a>
+
+      <section class="modal--show" id="new-room-modal" tabindex="-1"
+              role="dialog" aria-labelledby="modal-label" aria-hidden="true">
+
+          <div class="modal-inner callout">
+              <div class="modal-content">
+
+                <h4>Enter a room name</h4>
+                <input type="text" placeholder="Type here" ng-model="room">
+
+                <div class="button-group">
+
+                  <a ng-if="room" href="/chat" class="button" ng-click="addRoom()" data-close="Close"
+                      data-dismiss="modal">Create Room</a>
+
+                  <a ng-if="!room" class="disabled button" href="/chat">Create Room</a>
+
+                  <a href="/chat" data-close="Close"
+                      data-dismiss="modal" class="secondary button">Cancel</a>
+
+                </div>
+
+              </div>
+          </div>
+
+          <a href="/chat" class="modal-close" title="Close this modal" data-close="Close"
+              data-dismiss="modal">?</a>
+      </section>
+
+      <hr>
+
+      <ul ng-repeat="room in rooms">
+        <li>
+          <a ng-click="joinRoom()" ng-class="">{{ room.name }}</a>
+          <span ng-if="activeRoom === room.name" class="info badge"><i class="fa fa-check"></i></span>
+        </li>
+      </ul>
+
+  </div>
+</div>
+
+<div class="large-9 columns">
+  <div id="chatroom-wrap">
+
+    <h3 ng-if="activeRoom">Room: {{ activeRoom }}</h3>
+    <h3 ng-if="!activeRoom">Hello {{ activeUser }}! Select a Room</h3>
+
+    <table>
+      <tbody>
+        <tr ng-repeat="message in messages | orderBy:'-created' : true">
+          <td class="user">{{message.user}}</td>
+          <td class="message">{{message.message}}</td>
+          <td class="time">{{ message.created | date: 'H:mm a' }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="input-group" ng-if="activeRoom">
+
+      <input class="input-group-field" type="text" ng-model="activeMessage" placeholder="Write your message...">
+      <a class="input-group-button secondary button" ng-click="addMessage(activeMessage); activeMessage = null">Submit</a>
+
+    </div>
+
+  </div>
+</div>
