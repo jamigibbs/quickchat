@@ -1,6 +1,6 @@
 ## Quickchat
 
-A real-time chat application with Firebase, AngularJS, and Twitter OAuth -- [https://quickchat-ng.herokuapp.com/chat](https://quickchat-ng.herokuapp.com/chat)
+A real-time chat application with Firebase, AngularJS, and Twitter OAuth -- [https://quickchat-ng.herokuapp.com](https://quickchat-ng.herokuapp.com)
 
 ## Cloning is welcome!
 
