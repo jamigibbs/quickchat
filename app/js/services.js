@@ -7,7 +7,14 @@ angular.module('quickchatApp')
     // Get the users path as an array
     var usersRef = $firebaseArray(firebaseRef.child('users'));
     var username = null;
-    var redirect = false;
+
+    function redirect(location){
+      window.location = location;
+    }
+
+    function setCookie(cookie, value){
+      document.cookie = cookie + '=' + value;
+    }
 
     return {
 
@@ -26,6 +33,7 @@ angular.module('quickchatApp')
 
             // Get Twitter username
             username = authData.twitter.username;
+
             // Set our query var to check name values
             var query = firebaseRef.child('users').orderByChild('name').equalTo(username);
 
@@ -42,9 +50,18 @@ angular.module('quickchatApp')
                   id:       authData.twitter.id
                 });
 
-              // If a username matches, redirect to chatrooms
+                // Set username cookie
+                setCookie('quickchatCurrentUser', username);
+                // Redirect to chatrooms
+                redirect('/chat');
+
+              // If account already exists, redirect to chatrooms
               } else {
-                console.log('username exists');
+
+                // Set username cookie
+                setCookie('quickchatCurrentUser', username);
+                // Redirect to chatrooms
+                redirect('/chat');
               }
 
             });
@@ -73,9 +90,10 @@ angular.module('quickchatApp')
       allRooms: roomsRef,
 
       // Create rooms in Firebase
-      create: function(){
+      create: function(name){
+
         roomsRef.$add({
-          name:     this.room,
+          name:     name,
           created:  Date.now()
         });
 

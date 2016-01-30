@@ -5,9 +5,6 @@ angular.module('quickchatApp')
     // Lists all of the available rooms
     $scope.rooms = RoomsService.allRooms;
 
-    // Add a room to the list
-    $scope.addRoom = RoomsService.create;
-
     // Default values. Updates when user clicks room from the list
     $scope.activeRoomId = null;
     $scope.activeRoom = false;
@@ -21,6 +18,11 @@ angular.module('quickchatApp')
 
       $scope.messages = RoomsService.messages($scope.activeRoomId);
 
+    };
+
+    // Add a room to the list
+    $scope.addRoom = function(){
+      RoomsService.create(this.room);
     };
 
     // Converts the server date so we can filter in the view

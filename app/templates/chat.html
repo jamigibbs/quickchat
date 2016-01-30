@@ -15,12 +15,12 @@
 
                 <div class="button-group">
 
-                  <a ng-if="room" href="/" class="button" ng-click="addRoom()" data-close="Close"
+                  <a ng-if="room" href="/chat" class="button" ng-click="addRoom()" data-close="Close"
                       data-dismiss="modal">Create Room</a>
 
-                  <a ng-if="!room" class="disabled button" href="#">Create Room</a>
+                  <a ng-if="!room" class="disabled button" href="/chat">Create Room</a>
 
-                  <a href="/" data-close="Close"
+                  <a href="/chat" data-close="Close"
                       data-dismiss="modal" class="secondary button">Cancel</a>
 
                 </div>
@@ -28,7 +28,7 @@
               </div>
           </div>
 
-          <a href="/" class="modal-close" title="Close this modal" data-close="Close"
+          <a href="/chat" class="modal-close" title="Close this modal" data-close="Close"
               data-dismiss="modal">?</a>
       </section>
 
