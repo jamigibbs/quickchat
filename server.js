@@ -1,6 +1,6 @@
 var Hapi = require('hapi'),
     path = require('path'),
-    port = process.env.PORT,
+    //port = process.env.PORT || 3000,
     server = new Hapi.Server(~~process.env.PORT || 3000, '0.0.0.0'),
     routes = {
         css: {
@@ -36,7 +36,7 @@ server.route([ routes.css, routes.js, routes.assets, routes.templates, routes.sp
 server.start( onServerStarted );
 
 function onServerStarted() {
-    console.log( 'Server running on port ', port );
+  console.log('Server started at [' + server.info.uri + ']');
 }
 
 function createDirectoryRoute( directory ) {
