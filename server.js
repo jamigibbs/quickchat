@@ -1,7 +1,7 @@
 var Hapi = require('hapi'),
     path = require('path'),
     //port = process.env.PORT || 3000,
-    server = new Hapi.Server(process.env.PORT || 3000, '0.0.0.0'),
+    server = new Hapi.Server(~~process.env.PORT || 3000, '0.0.0.0'),
     routes = {
         css: {
             method: 'GET',
@@ -27,7 +27,7 @@ var Hapi = require('hapi'),
             method: 'GET',
             path: '/{path*}',
             handler: {
-                file: path.join(__dirname, '/dist/index.html')
+              file: path.join(__dirname, '/dist/index.html')
             }
         }
     };
