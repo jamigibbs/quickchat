@@ -26,7 +26,7 @@ $ grunt
 
 The default task runs a simple server on port 3000. To view it in a any browser, go to [http://localhost:3000](http://localhost:3000).
 
-### TODO
+### Roadmap
 
 - As a developer, I want to create admin users
 - As an admin, I want to create private rooms for authorized participants
